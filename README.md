@@ -2,6 +2,8 @@
 
 **Big files. Local transfers. Zero cloud.**
 
+[Website](https://cataliniliescualex.github.io/warpcoil/) · [Download latest beta](https://github.com/cataliniliescualex/warpcoil/releases/latest) · [Report an issue](https://github.com/cataliniliescualex/warpcoil/issues/new) · [Contribute](CONTRIBUTING.md)
+
 WarpCoil transfers original-quality videos and other files from an iPhone browser to a Windows or Ubuntu computer over a trusted local network. It is free and open source under the **Mozilla Public License 2.0**.
 
 > **Public beta — version 1.3.1.** Tested by the project creator on Windows, Ubuntu and an iPhone with files larger than 4 GB. This is community-tested beta software, not a security-audited release.
