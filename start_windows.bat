@@ -7,5 +7,5 @@ if %errorlevel%==0 (
     python localdrop.py
 )
 echo.
-echo LocalDrop s-a inchis. Apasa o tasta pentru a inchide fereastra.
+echo WarpCoil s-a inchis. Apasa o tasta pentru a inchide fereastra.
 pause >nul
