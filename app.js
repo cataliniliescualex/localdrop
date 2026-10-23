@@ -24,10 +24,10 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     if (diagEntries.length > 35) diagEntries.shift();
     $("diagnostic-log").textContent = diagEntries.join("\n");
   }
-  diag("LocalDrop 1.3 activ; diagnostic pregătit.");
+  diag("WarpCoil 1.3.1 activ; diagnostic pregătit.");
 
   $("copy-diagnostics").addEventListener("click", async () => {
-    const report = "LocalDrop 1.3\n" + $("speed-result").textContent + "\n" + diagEntries.join("\n");
+    const report = "WarpCoil 1.3.1\n" + $("speed-result").textContent + "\n" + diagEntries.join("\n");
     try {
       await navigator.clipboard.writeText(report);
       $("copy-diagnostics").textContent = "Copiat ✓";

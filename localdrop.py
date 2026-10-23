@@ -3,7 +3,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-"""LocalDrop 1.3 — resumable LAN uploads with speed diagnostics."""
+"""WarpCoil 1.3.1 — resumable LAN uploads with speed diagnostics."""
 
 from __future__ import annotations
 
@@ -243,7 +243,7 @@ class State:
 
 
 class AppHandler(BaseHTTPRequestHandler):
-    server_version = "LocalDrop/1.3"
+    server_version = "WarpCoil/1.3.1"
     # A fresh connection for each chunk avoids stale persistent sockets on iOS.
     protocol_version = "HTTP/1.0"
 
@@ -401,7 +401,7 @@ class AppHandler(BaseHTTPRequestHandler):
             if result.get("conflict"):
                 return self.respond(409, result)
             if result["offset"] <= 16 * 1024 * 1024 or result["offset"] % (32 * 1024 * 1024) == 0:
-                print(f"[LocalDrop] {path.path.rsplit('/', 1)[-1][:8]}: "
+                print(f"[WarpCoil] {path.path.rsplit('/', 1)[-1][:8]}: "
                       f"{result['offset']:,} octeți; "
                       f"citire LAN {result['serverReadMs']} ms, "
                       f"disc {result['serverWriteMs']} ms, "
@@ -429,7 +429,7 @@ class AppServer(ThreadingHTTPServer):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="LocalDrop — transfer iPhone → PC prin Wi-Fi")
+    parser = argparse.ArgumentParser(description="WarpCoil — transfer iPhone → PC prin Wi-Fi")
     parser.add_argument("--port", type=int, default=8765, help="Port local (implicit 8765)")
     parser.add_argument("--folder", type=Path, default=Path.home() / "Videos" / "LocalDrop",
                         help="Dosarul în care ajung fișierele")
@@ -442,7 +442,7 @@ def main():
         print(f"Eroare la pornire: {exc}", file=sys.stderr)
         return 1
     url = f"http://{server.lan_ip}:{server.server_port}"
-    print("\n  LOCALDROP — transfer direct iPhone → PC")
+    print("\n  WARPCOIL — transfer direct iPhone → PC")
     print("  -------------------------------------")
     print(f"  Pe iPhone, deschide Safari: {url}")
     print(f"  Cod de conectare: {state.pin}")
@@ -454,7 +454,7 @@ def main():
     try:
         server.serve_forever(poll_interval=0.2)
     except KeyboardInterrupt:
-        print("\nLocalDrop oprit.")
+        print("\nWarpCoil oprit.")
     finally:
         server.server_close()
     return 0

@@ -1,10 +1,10 @@
-# LocalDrop
+# WarpCoil
 
 **Big files. Local transfers. Zero cloud.**
 
-LocalDrop transfers original-quality videos and other files from an iPhone browser to a Windows or Ubuntu computer over a trusted local network. It is free and open source under the **Mozilla Public License 2.0**.
+WarpCoil transfers original-quality videos and other files from an iPhone browser to a Windows or Ubuntu computer over a trusted local network. It is free and open source under the **Mozilla Public License 2.0**.
 
-> **Public beta — version 1.3.0.** Tested by the project creator on Windows, Ubuntu and an iPhone with files larger than 4 GB. This is community-tested beta software, not a security-audited release.
+> **Public beta — version 1.3.1.** Tested by the project creator on Windows, Ubuntu and an iPhone with files larger than 4 GB. This is community-tested beta software, not a security-audited release.
 
 ## Features
 
@@ -13,7 +13,7 @@ LocalDrop transfers original-quality videos and other files from an iPhone brows
 - Resume interrupted uploads after reselecting a file in the same browser/session (provided the stored transfer metadata matches).
 - Pair with a six-digit PIN shown on the computer.
 - Built-in local-network speed test and diagnostic logs.
-- Preserve the transmitted file bytes; LocalDrop itself does not re-encode videos.
+- Preserve the transmitted file bytes; WarpCoil itself does not re-encode videos.
 
 ## Requirements
 
@@ -42,7 +42,7 @@ Connect the iPhone to the same trusted local network. Your laptop may use Ethern
 
 ### Receiving folder
 
-By default files are saved under `~/Videos/LocalDrop` (the user Videos directory on Windows or Linux). To customize:
+By default files are saved under `~/Videos/LocalDrop` (the historical default folder, retained for compatibility on Windows and Linux). To customize:
 
 ```bash
 python3 localdrop.py --folder "/path/to/destination"
@@ -58,7 +58,7 @@ On the iPhone open **03 / DIAGNOSTIC** and run the 8 MB local speed test. The ap
 
 ## Security and privacy
 
-**Only use LocalDrop on networks you trust.** The current release uses **unencrypted HTTP**, even after PIN pairing. Users on the same network with sufficient access could intercept traffic, including authentication data and transferred files. Do **not** expose port 8765 to the public internet, forward your router's port, or use public/hotel/guest Wi-Fi. Keep the server running only while transferring files. See [SECURITY.md](SECURITY.md).
+**Only use WarpCoil on networks you trust.** The current release uses **unencrypted HTTP**, even after PIN pairing. Users on the same network with sufficient access could intercept traffic, including authentication data and transferred files. Do **not** expose port 8765 to the public internet, forward your router's port, or use public/hotel/guest Wi-Fi. Keep the server running only while transferring files. See [SECURITY.md](SECURITY.md).
 
 No telemetry, third-party server, or cloud service is used by the program. The included local networking speed test generates test data on the phone.
 
@@ -74,4 +74,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ## License
 
-Source code is licensed under [MPL-2.0](LICENSE). See [NOTICE.md](NOTICE.md) for attribution. The LocalDrop name and any future logos are not granted as trademarks by the MPL license.
+Source code is licensed under [MPL-2.0](LICENSE). See [NOTICE.md](NOTICE.md) for attribution. The WarpCoil name and any future logos are not granted as trademarks by the MPL license.
+
+## Compatibility with LocalDrop v1.3.0
+
+WarpCoil is the new name for the original LocalDrop project. The executable remains `localdrop.py`, the browser pairing state and `X-LocalDrop-Token` HTTP header are preserved, and the default receiving folder is still `~/Videos/LocalDrop`. Keep `.localdrop-parts` if you intend to resume an unfinished transfer. Existing LocalDrop releases remain accessible in the repository history.

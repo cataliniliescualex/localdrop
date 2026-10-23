@@ -2,11 +2,11 @@
 
 ## Scope
 
-LocalDrop 1.3.0 is a local-network beta. It is **not designed for untrusted networks**.
+WarpCoil 1.3.1 is a local-network beta. It is **not designed for untrusted networks**.
 
 - Traffic uses plain HTTP and is **not encrypted**. The six-digit pairing PIN is not a substitute for transport encryption.
 - Anybody with sufficient access to your LAN might observe or interfere with transfers. Do not transfer sensitive files on untrusted networks.
-- Never expose port 8765 to the internet and never configure router port forwarding for LocalDrop.
+- Never expose port 8765 to the internet and never configure router port forwarding for WarpCoil.
 - Allow access only on private/trusted networks; close the program when not actively used.
 - Treat incoming files as untrusted content and scan them before opening them.
 

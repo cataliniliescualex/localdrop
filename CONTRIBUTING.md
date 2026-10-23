@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in LocalDrop!
+Thank you for your interest in WarpCoil!
 
 1. Search existing issues before opening a new one.
 2. Reproduce bugs on the latest release; include OS, browser, steps and sanitized diagnostic logs. Never disclose pairing PINs, authentication tokens or private file paths.
